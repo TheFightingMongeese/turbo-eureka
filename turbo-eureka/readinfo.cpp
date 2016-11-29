@@ -27,7 +27,7 @@ void ReadInfo::run()
 
     Scientist sc;
 
-    cout << " how many scientists do you want to input? " << endl;
+    cout << "How many scientists do you want to input? " << endl;
     int numberOfSci = 0;
     cin >> numberOfSci;
 
