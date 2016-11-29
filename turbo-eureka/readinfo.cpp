@@ -7,8 +7,7 @@ using namespace std;
 
 struct Scientist
 {
-   string LastName;
-   string FirstName;
+   string name;
    string gender;
    int birth;
    int death;
@@ -37,10 +36,8 @@ void ReadInfo::run()
         cout << "Input information about famous computer scientists:" << endl;
         for(int i = 0; i < numberOfSci; i++)
         {
-            cout << "Last Name: ";
-            cin >> sc.LastName;
-            cout << "First Name: ";
-            cin >> sc.FirstName;
+            cout << "Name: ";
+            cin >> sc.name;
             cout << "Gender: ";
             cin >> sc.gender;
             cout << "Date of birth: ";
@@ -58,3 +55,5 @@ void ReadInfo::run()
         }
 
 }
+
+
