@@ -7,7 +7,8 @@ using namespace std;
 
 struct Scientist
 {
-   string name;
+   string LastName;
+   string FirstName;
    string gender;
    int birth;
    int death;
@@ -27,28 +28,33 @@ void ReadInfo::run()
 
     Scientist sc;
 
+    cout << "How many scientists do you want to input? " << endl;
+    int numberOfSci = 0;
+    cin >> numberOfSci;
 
-    cout << "Input information about famous computer scientists:" << endl;
+    if(numberOfSci > 0)
+    {
+        cout << "Input information about famous computer scientists:" << endl;
+        for(int i = 0; i < numberOfSci; i++)
+        {
+            cout << "Last Name: ";
+            cin >> sc.LastName;
+            cout << "First Name: ";
+            cin >> sc.FirstName;
+            cout << "Gender: ";
+            cin >> sc.gender;
+            cout << "Date of birth: ";
+            cin >> sc.birth;
+            cout << "Date of death (0 if not applicable): ";
+            cin >> sc.death;
+            cout << endl;
 
-       cout << "Name: " << endl;
-       cin >> sc.name;
-       cout << "Gender: " << endl;
-       cin >> sc.gender;
-       cout << "Date of birth: " << endl;
-       cin >> sc.birth;
-       cout << "Date of death (0 if not applicable):" << endl;
-       cin >> sc.death;
-
-       scientist.push_back(sc);
-
-       cout << endl;
-       cout << "Do you want to input information about another scientist?" << endl;
-       cout << endl;
-
-
-
-
+            scientist.push_back(sc);
+        }
+    }
+        else
+        {
+            cout << "Input positive number of Scientists";
+        }
 
 }
-
-
