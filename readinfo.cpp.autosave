@@ -39,7 +39,7 @@ void ReadInfo::run()
        cin >> sc.gender;
        cout << "Year of birth: ";
        cin >> sc.birth;
-       cout << "Year of death (0 if not applicable):";
+       cout << "Year of death (0 if not applicable): ";
        cin >> sc.death;
 
        scientist.push_back(sc);
