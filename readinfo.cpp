@@ -14,17 +14,19 @@ struct Scientist
 
 };
 
-void ReadInfo::counter(int counter)
+ReadInfo::ReadInfo()
 {
 
 }
+
+
 
 void ReadInfo::run()
 {
     vector<Scientist> scientist;
 
     Scientist sc;
-    string confirm;
+
 
     cout << "Input information about famous computer scientists:" << endl;
 
@@ -43,8 +45,7 @@ void ReadInfo::run()
        cout << "Do you want to input information about another scientist?" << endl;
        cout << endl;
 
-       int counter;
-       counter++;
+
 
 
 

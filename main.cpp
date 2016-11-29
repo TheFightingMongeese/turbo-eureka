@@ -19,8 +19,6 @@ int main()
 
       }while(confirm == 'y');
 
-      read.display();
-
 
 
 

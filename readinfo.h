@@ -8,7 +8,7 @@ public:
     ReadInfo();
 
     void run();
-    void display();
+
 };
 
 #endif // READINFO_H
