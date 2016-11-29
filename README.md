@@ -1,6 +1,64 @@
 # turbo-eureka
 Verklegt námskeið 1
 
+### Hugmynd að sauðakóða
+class Record {
+    private string Name;
+    private string OtherName;
+    
+    public construct(string Name_, string OtherName_) {
+        this.Name = Name_;
+        this.OtherName = OtherName_;
+    }   
+    
+}   
+
+class RecordManager {
+    private Vector<Record> ListOfRecords;
+
+    public construct() {
+        this.ListOfRecords = new List<Record>();
+    }
+    
+    public AddNew(Name, OtherName) {
+        Record rec = new Record(Name, OtherName);
+        for (Record tmp_rec in this.ListOfRecords) {
+            // úps, það er nú þegar til í ListOfRecords
+            if (tmp_rec == rec) {
+                return false;
+            }
+        }
+        this.ListOfRecords.add(rec);
+        return true;
+    }
+}   
+
+//Notkun
+
+int main() {
+    RecordManager rm = new RecordManager();
+    int action;
+
+    while(;;) {
+        cout >> "1. skrá inn nýja færslu, 2. lista færslur, 3. lista færslur eftir nafni" >> endl;
+        cin >> action;
+
+        if (action == 1) {
+            cout >> "Nafn : ";
+            cin >> tmp_name;
+            cout >> "Nafn 2: ";
+            cin >> tmp_othername;
+            bool ret = rm.AddNew(tmp_name, tmp_othername);
+            if (!ret) { 
+                cout << "færsla nú þegar til..";
+            }
+            else {
+                cout << "Færsla skráð.";
+            }
+        }
+    }
+}
+
 ##Verkefnalýsing
 
  
