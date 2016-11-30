@@ -2,10 +2,11 @@
 #define DATABASE_H
 
 
-class DATABASE
+class DataBase
 {
 public:
-    DATABASE();
+    DataBase();
+    void makeFile();
 };
 
 #endif // DATABASE_H

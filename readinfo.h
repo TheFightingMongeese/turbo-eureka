@@ -6,8 +6,8 @@ class ReadInfo
 {
 public:
     ReadInfo();
-
     void run();
+
 
 };
 
