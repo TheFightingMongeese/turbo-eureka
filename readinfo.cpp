@@ -1,19 +1,14 @@
 #include <iostream>
-#include "readinfo.h"
-#include <vector>
+#include <fstream>
+#include "database.h"
+
 #include <string>
+
+
 
 using namespace std;
 
-struct Scientist
-{
-   string LastName;
-   string FirstName;
-   string gender;
-   int birth;
-   int death;
 
-};
 
 ReadInfo::ReadInfo()
 {
@@ -22,14 +17,14 @@ ReadInfo::ReadInfo()
 
 
 
-void ReadInfo::run()
+vector<Scientist> ReadInfo::run()
 {
     vector<Scientist> scientist;
 
     Scientist sc;
 
     cout << "How many scientists do you want to input? " << endl;
-    int numberOfSci = 0;
+    numberOfSci = 0;
     cin >> numberOfSci;
 
     if(numberOfSci > 0)
@@ -57,4 +52,10 @@ void ReadInfo::run()
             cout << "Input positive number of Scientists";
         }
 
+    return scientist;
+}
+
+int ReadInfo::getNumberOfSci()
+{
+    return numberOfSci;
 }
