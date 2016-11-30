@@ -7,9 +7,9 @@ int main()
 {
     ofstream outFile;
 
-    outFile.open("Database.txt");
+    outFile.open("Database.txt",ofstream::out|ofstream::app);
 
-    outFile << "Test" << endl;
+    outFile << "Kobbi" << endl;
 
     outFile.close();
 
