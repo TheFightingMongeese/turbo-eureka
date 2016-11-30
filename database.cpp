@@ -2,28 +2,33 @@
 #include <iostream>
 #include <fstream>
 
+
 using namespace std;
 
-DataBase::DataBase()
+
+
+DataBase::DataBase(vector<Scientist> scientist)
 {
 
-}
-/*
-void DataBase::makeFile()
-{
-    ofstream outFile;
 
-        outFile.open("Database.txt",ofstream::out|ofstream::app);
+    for(int i = 0; i < numberOfSci; i++)
+    {
+        ofstream outFile;
 
-        outFile << "Info\n\n" << endl;
+        outFile.open("Person.txt",ofstream::out|ofstream::app);
+
+        outFile << "Name: " << scientist[i].FirstName;
+        outFile << " " << scientist[i].LastName << endl;
+        outFile << "Gender: " << scientist[i].gender << endl;
+        outFile << "Year of birth: " << scientist[i].birth << endl;
+        outFile << "Year of death: " << scientist[i].death << endl;
+        outFile << endl;
 
         outFile.close();
 
-
-
         ifstream inFile;
 
-        inFile.open("Database.txt");
+        inFile.open("..//Person.txt");
 
         if(inFile.is_open())
         {
@@ -35,10 +40,11 @@ void DataBase::makeFile()
 
             inFile.get(optrBuffer, length);
 
-            cout << optrBuffer << endl;
 
-            delete [] optrBuffer;
+
         }
 
+    }
+    return 0;
 }
-*/
+

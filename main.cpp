@@ -1,4 +1,4 @@
-#include "readinfo.h"
+
 #include "database.h"
 
 int main()

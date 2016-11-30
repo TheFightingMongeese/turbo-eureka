@@ -15,4 +15,5 @@ SOURCES += main.cpp \
 
 HEADERS += \
     readinfo.h \
-    database.h
+    database.h \
+    scientist.h
