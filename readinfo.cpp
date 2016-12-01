@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include "database.h"
-
 #include <string>
 
 
@@ -20,7 +19,7 @@ vector<Scientist> ReadInfo::run()
     vector<Scientist> scientist;
 
     Scientist sc;
-    char velja = NULL;
+    char velja; // = NULL;
     cout << "Press 's' to search, 'o' to organize the file and 'a' to add a scientist : ";
     cin>>velja;
 
@@ -47,44 +46,85 @@ vector<Scientist> ReadInfo::run()
                 cout << endl;
 
                 scientist.push_back(sc);
+
             }
+            run();
         }
 
         else
         {
-            cout << "Input positive number of Scientists";
+            cout << "Input valid number of Scientists!" << endl;
+
+            run();
         }
 
         return scientist;
     }
     else if(velja == 'o'|| velja == 'O')
     {
-        // Endurraða hlutunum.
+        DataBase data;
+        int choice;
+
+        cout << "How do you want to organize the list? " << endl;
+        cout << "1. By name (alphabetically) " << endl;
+        cout << "2. By year of birth " << endl;
+        cout << "3. By year of death " << endl;
+        cin >> choice;
+
+        if(choice == 1)
+        {
+            data.alphabet();
+        }
+        else if(choice == 2)
+        {
+            data.byBirth();
+        }
+        else if(choice == 3)
+        {
+            data.byDeath();
+        }
+
     }
     else if(velja == 's'|| velja == 'S')
     {
-        string lina;
+        string firstnafn;
+        string lastnafn;
+        string kyn;
+        int born;
+        int dead;
+
+        /*string lina;
         cout << " hverjum viltu leita af ? : " ;
-        cin >> lina;
+        cin >> lina;*/
+
       ifstream openfile("..\\Person.txt");
       if(openfile.is_open())
       {
-
-          while(getline(openfile,lina));
+          while(openfile >> firstnafn >> lastnafn >> kyn >> born >> dead)
           {
-           cout << lina << endl;;
+           cout <<"Name: "  << firstnafn <<" "<< lastnafn << "\n";
+           cout << "Gender:  " << kyn << "\n" << "Born: " << born << "\n" << "Died (0 if alive:) " << dead << endl;
           }
           openfile.close();
+
       }
+
       else
       {
-          cout << "file is not open";
+          cout << "file is not open" << endl;
       }
+      cin.get();
+
     }
+
     else
     {
-        cout << " Invalid input";
+        cout << " Invalid input" << endl;
+        run();
     }
+
+    //run();
+
 }
 int ReadInfo::getNumberOfSci()
 {

@@ -9,6 +9,9 @@ class DataBase
 public:
     DataBase(vector<Scientist> s, int numberOfSci);
     void makeFile();
+    void alphabet();
+    void byBirth();
+    void byDeath();
 };
 
 #endif // DATABASE_H
