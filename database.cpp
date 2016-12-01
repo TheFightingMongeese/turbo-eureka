@@ -17,11 +17,15 @@ DataBase::DataBase(vector<Scientist> scientist, int numberOfSci)
 
         outFile.open("..\\Person.txt",ofstream::out|ofstream::app);
 
-        outFile << "Name: " << scientist[i].FirstName;
+        //outFile << "Name: " << scientist[i].FirstName;
+        outFile << scientist[i].FirstName;
         outFile << " " << scientist[i].LastName << endl;
-        outFile << "Gender: " << scientist[i].gender << endl;
-        outFile << "Year of birth: " << scientist[i].birth << endl;
-        outFile << "Year of death: " << scientist[i].death << endl;
+       // outFile << "Gender: " << scientist[i].gender << endl;
+        outFile << scientist[i].gender << endl;
+       // outFile << "Year of birth: " << scientist[i].birth << endl;
+        outFile << scientist[i].birth << endl;
+       // outFile << "Year of death: " << scientist[i].death << endl;
+        outFile << scientist[i].death << endl;
         outFile << endl;
 
         outFile.close();
