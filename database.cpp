@@ -2,14 +2,15 @@
 #include <iostream>
 #include <fstream>
 
-
 using namespace std;
 
 
 
 DataBase::DataBase(vector<Scientist> scientist, int numberOfSci)
 {
-
+    //This saves all the input from the user into a .txt which
+    //will serve as our database
+    //Any code that's commented out is just us experimenting
 
     for(int i = 0; i < numberOfSci; i++)
     {
@@ -20,6 +21,7 @@ DataBase::DataBase(vector<Scientist> scientist, int numberOfSci)
         outFile << "Name: " << scientist[i].FirstName;
         //outFile << scientist[i].FirstName;
         outFile << " " << scientist[i].LastName << endl;
+        outFile << "-----------" << endl;
         outFile << "Gender: " << scientist[i].gender << endl;
        // outFile << scientist[i].gender << endl;
         outFile << "Year of birth: " << scientist[i].birth << endl;
@@ -34,6 +36,8 @@ DataBase::DataBase(vector<Scientist> scientist, int numberOfSci)
 
         inFile.open("..\\Person.txt");
 
+        //This code adds info to the list without overwriting previous data
+
         if(inFile.is_open())
         {
             inFile.seekg(0, inFile.end);
@@ -43,25 +47,8 @@ DataBase::DataBase(vector<Scientist> scientist, int numberOfSci)
             char * optrBuffer = new char[length+1];
 
             inFile.get(optrBuffer, length);
-
-
-
         }
-
     }
 }
 
-void DataBase::alphabet()
-{
 
-}
-
-void DataBase::byBirth()
-{
-
-}
-
-void DataBase::byDeath()
-{
-
-}

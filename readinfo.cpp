@@ -1,13 +1,13 @@
 #include <iostream>
 #include <fstream>
-#include "database.h"
 #include <string>
+#include <algorithm>
+#include "database.h"
+#include "displayinfo.h"
 
 
 
 using namespace std;
-
-
 
 ReadInfo::ReadInfo()
 {
@@ -19,8 +19,12 @@ vector<Scientist> ReadInfo::run()
     vector<Scientist> scientist;
 
     Scientist sc;
-    char velja; // = NULL;
-    cout << "Press 's' to search, 'o' to organize the file and 'a' to add a scientist : ";
+
+    char velja = NULL;
+    cout << "Press 's' to search, " << endl;
+    cout << "Press 'o' to organize the file, " << endl;
+    cout << "Press 'a' to add a scientist, " << endl;
+    cout << "Press 'd' to display list " << endl;
     cin>>velja;
 
     if(velja == 'a'|| velja == 'A'){
@@ -33,6 +37,9 @@ vector<Scientist> ReadInfo::run()
             cout << "Input information about famous computer scientists:" << endl;
             for(int i = 0; i < numberOfSci; i++)
             {
+                // We save all the user input into a vector.
+                // Data from this process is transferred to the database
+
                 cout << "Last Name: ";
                 cin >> sc.LastName;
                 cout << "First Name: ";
@@ -48,21 +55,21 @@ vector<Scientist> ReadInfo::run()
                 scientist.push_back(sc);
 
             }
-            run();
         }
+
 
         else
         {
-            cout << "Input valid number of Scientists!" << endl;
-
-            run();
+            cout << "Input valid number of Scientists!" << endl;            
         }
 
         return scientist;
+
     }
+
+
     else if(velja == 'o'|| velja == 'O')
     {
-        DataBase data;
         int choice;
 
         cout << "How do you want to organize the list? " << endl;
@@ -73,15 +80,20 @@ vector<Scientist> ReadInfo::run()
 
         if(choice == 1)
         {
-            data.alphabet();
+          //  sort(scientist.begin(), scientist.end());
         }
         else if(choice == 2)
-        {
-            data.byBirth();
+        {/*
+            sort(scientist.birth.begin(), scientist.birth.end());
+            DisplayInfo dis;
+            dis.display();
+
+            */
+
         }
         else if(choice == 3)
         {
-            data.byDeath();
+
         }
 
     }
@@ -93,9 +105,9 @@ vector<Scientist> ReadInfo::run()
         int born;
         int dead;
 
-        /*string lina;
-        cout << " hverjum viltu leita af ? : " ;
-        cin >> lina;*/
+        string lina;
+        cout << "Who do you want to search for? : " ;
+        cin >> lina;
 
       ifstream openfile("..\\Person.txt");
       if(openfile.is_open())
@@ -117,14 +129,20 @@ vector<Scientist> ReadInfo::run()
 
     }
 
+    else if(velja == 'd' || velja == 'D')
+    {
+        DisplayInfo dis;
+        dis.display();
+    }
+
     else
     {
         cout << " Invalid input" << endl;
-        run();
+        //run();
     }
 
     //run();
-
+    return run();
 }
 int ReadInfo::getNumberOfSci()
 {

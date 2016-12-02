@@ -1,7 +1,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 #include "readinfo.h"
-#include <vector>
+//#include <vector>
 
 using namespace std;
 class DataBase
