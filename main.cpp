@@ -1,4 +1,5 @@
-
+#include "displayinfo.h"
+#include "readinfo.h"
 #include "database.h"
 
 int main()
@@ -10,5 +11,10 @@ int main()
     //make.makeFile();
     s = read.run();
     DataBase b(s, read.getNumberOfSci());
+/*
+    DisplayInfo dis;
+    dis.display();
+
+*/
 
 }

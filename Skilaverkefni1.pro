@@ -11,9 +11,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     readinfo.cpp \
-    database.cpp
+    database.cpp \
+    displayinfo.cpp
 
 HEADERS += \
     readinfo.h \
     database.h \
-    scientist.h
+    scientist.h \
+    displayinfo.h
