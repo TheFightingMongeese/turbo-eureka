@@ -9,11 +9,26 @@
 
 using namespace std;
 
+bool sortNameAsc(const Scientist& lhs, const Scientist& rhs)    // test
+{
+    return lhs.getName() < rhs.getName();
+}
+
+bool sortNameDesc(const Scientist& lhs, const Scientist& rhs)    // test
+{
+    return rhs.getName() < lhs.getName();
+}
+
 ReadInfo::ReadInfo()
 {
 
 }
+//bool myfunction(int i,int j){return (i<j);}
 
+/*struct ScientistComparison
+{
+    bool operator()(Scientist i,Scientist j){return (i.getName()<j.getName());}
+};*/
 vector<Scientist> ReadInfo::run()
 {
     vector<Scientist> scientist;
@@ -82,7 +97,17 @@ vector<Scientist> ReadInfo::run()
 
         if(choice == 1)
         {
-          //  sort(scientist.begin(), scientist.end());
+            vector<Scientist> ScientistService::sortAllScientistsAtoZ()           // test
+            {
+                sort(_scientists.begin(), _scientists.end(), sortNameAsc);
+                return _scientists;
+            }
+
+            vector<Scientist> ScientistService::sortAllScientistsZtoA()          // test
+            {
+                sort(_scientists.begin(), _scientists.end(), sortNameDesc);
+                return _scientists;
+            }
         }
         else if(choice == 2)
         {/*
@@ -101,7 +126,17 @@ vector<Scientist> ReadInfo::run()
     }
     else if(velja == 's'|| velja == 'S')
     {
-        string firstnafn;
+
+
+        char* search = " andrey";
+        int offset;
+
+        if((offset =line.find(search,0)) != string::npos)
+        {
+            cout << " found '" << search << "' @ offset " << offset<< endl;
+        }
+
+      /*  string firstnafn;
         string lastnafn;
         string kyn;
         int born;
@@ -129,7 +164,7 @@ vector<Scientist> ReadInfo::run()
       }
       cin.get();
 
-    }
+    }*/
 
     else if(velja == 'd' || velja == 'D')
     {
