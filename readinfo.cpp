@@ -63,16 +63,23 @@ vector<Scientist> ReadInfo::run()
     }
     else if(velja == 's'|| velja == 'S')
     {
-        string lina;
+        string firstnafn;
+        string lastnafn;
+        string kyn;
+        int born;
+        int dead;
+
+        /*string lina;
         cout << " hverjum viltu leita af ? : " ;
-        cin >> lina;
+        cin >> lina;*/
       ifstream openfile("..\\Person.txt");
       if(openfile.is_open())
       {
 
-          while(getline(openfile,lina));
+          while(openfile >> firstnafn >> lastnafn >> kyn >> born >> dead);
           {
-           cout << lina << endl;;
+           cout <<"Name: "  << firstnafn <<" "<< lastnafn << "\n";
+           cout << "Gender:  " << kyn << "\n" << "Born: " << born << "\n" << "Died (0 if alive:) " << dead << endl;;
           }
           openfile.close();
       }
@@ -80,6 +87,7 @@ vector<Scientist> ReadInfo::run()
       {
           cout << "file is not open";
       }
+      cin.get();
     }
     else
     {
