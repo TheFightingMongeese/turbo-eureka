@@ -109,9 +109,9 @@ vector<Scientist> ReadInfo::run()
         string search;
         ifstream("..\\Person.txt");
 
-        string lina;
+
         cout << "Who do you want to search for? : " ;
-        cin >> lina;
+        cin >> search;
 
        ifstream openfile("..\\Person.txt");
       if(openfile.is_open())
@@ -119,11 +119,11 @@ vector<Scientist> ReadInfo::run()
           size_t pos;
           while(openfile.good())
             {
-                getline(openfile,lina); // get line from file
-                pos=lina.find(search); // search
+                getline(openfile,search); // get line from file
+                pos=search.find(search); // search
                 if(pos!=string::npos) // string::npos is returned if string is not found
                   {
-                      cout <<"Found!" << lina;
+                      cout <<"Found!" << search;
                       break;
                   }
             }
