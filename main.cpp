@@ -1,14 +1,11 @@
+#include "mainwindow.h"
+#include <QApplication>
 
-#include "database.h"
-
-int main()
+int main(int argc, char *argv[])
 {
-    vector<Scientist> s;
-    //DataBase make;
-    ReadInfo read;
+    QApplication a(argc, argv);
+    MainWindow window;
+    window.show();
 
-    //make.makeFile();
-    s = read.run();
-    DataBase b(s, read.getNumberOfSci());
-
+    return a.exec();
 }
